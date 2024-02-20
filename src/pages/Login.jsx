@@ -2,9 +2,9 @@ import { AuthorizationService } from "../services/AuthorizationService";
 
 export default function Login() {
     const urlParams = new URLSearchParams(window.location.search);
-    let code = urlParams.get('code'); //Esto no sé si va acá o en App.jsx
+    let code = urlParams.get('code');
 
-    AuthorizationService.getToken;
+    AuthorizationService.getToken(code);
 
 
 
