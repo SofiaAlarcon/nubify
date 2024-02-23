@@ -34,7 +34,6 @@ export const AuthorizationService = {
 
     getToken: async function (code) {
 
-        // stored in the previous step
         let codeVerifier = localStorage.getItem('code_verifier');
     
         const payload = {
@@ -52,8 +51,9 @@ export const AuthorizationService = {
         }
     
         const body = await fetch(AuthConstants.tokenUrl, payload);
-        const response =await body.json();
+        const response = await body.json();
     
         localStorage.setItem('access_token', response.access_token);
+        //ver después si saco el token de esta func o si hago la llamada al backend desde esta func directamente.
     }
 } 
